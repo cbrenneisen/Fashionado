@@ -36,18 +36,15 @@ final class ContentInteractor<T, U: ServiceInterface> where U.T == T {
         self.currentURL = T.endpoint.fullURL
         fetch()
     }
-    
+
+    /**
+     Toggle favorite
+     - parameter indexPath: The location of the item to toggle
+    */
     func select(indexPath: IndexPath) {
         var value = content.value
         value[indexPath.row].favorite.toggle()
         content.accept(value)
-
-        let item = value[indexPath.row]
-
-        guard let myItem = item as? Article else {
-            //TODO
-            return
-        }
     }
     
     /**

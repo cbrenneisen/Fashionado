@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ContentController<T: Item>: UIViewController, UITableViewDataSourcePrefetching {
+final class ContentController<T: Item>: UIViewController, UITableViewDataSourcePrefetching {
 
     private lazy var tableView = ContentTableView(frame: self.view.bounds)
     
